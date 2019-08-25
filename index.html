@@ -32,8 +32,8 @@
       var db = firebase.database();
       var myChatAll = db.ref("/table1/");
       function changeData(){
-        var text = document.getElementById("age").value;
-        myChatAll.set({title:"age-text", text:text});
+        var text = document.getElementById("age-text").value;
+        myChatAll.set({title:"age", text:text});
       }
 });
     
