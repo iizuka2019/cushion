@@ -42,7 +42,7 @@ input.liffRadio {
 .btn-led-toggle {
     box-shadow: 0 4pt 8pt 0 rgba(0,0,0,0.2), 0 3pt 10pt 0 rgba(0,0,0,0.19);
     color: #f8f9fa; /* Light */
-    background-color: #e30e2a; /* Tranig-End Red */
+    background-color: #ffffff; /* Tranig-End Red */
     width: 80pt;
     font-weight: bold;
     height: 40pt;
