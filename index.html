@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="cushion.css" />
-  </head>
+      <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+   </head>
 
   <body>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAmSempEJ9w0lu8yYkFbdmpgI8nnlOC_YU",
+            authDomain: "enebular-motion.firebaseapp.com",
+            databaseURL: "https://enebular-motion.firebaseio.com",
+            projectId: "enebular-motion",
+            storageBucket: "",
+            messagingSenderId: "367617695978"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script>
+            // データベースの参照を準備
+            var messagesRef = firebase.database().ref().child('table1')
+        
+            // 既存メッセージを表示
+            messagesRef.on('child_added', function(snapshot) {
+                var msg = snapshot.val();
+                $('<li>').text(msg.Sittingtime + ': ' + msg.Standtime).prependTo('#table1');
+            });
+        
+        </script>
+    
+    
     <!-- Title -->
     <h2>スマートクッション</h2>
     <hr />
