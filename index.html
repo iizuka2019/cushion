@@ -22,21 +22,21 @@
     </script>
     
     <script>
-  
-  firebase.database().ref('/table1/').on('value',function(snapshot) {
+      firebase.database().ref('/table1/').on('value',function(snapshot) {
       document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
       document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
+});
     
+    </script>
     
-    
+    <script>
       var db = firebase.database();
       var myChatAll = db.ref("/table1/");
       function changeData(){
         var text = document.getElementById("age-text").value;
         myChatAll.set({title:"age", text:text});
       }
-});
-    
+      
     </script>
     
     <!-- Title -->
