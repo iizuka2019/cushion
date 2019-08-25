@@ -34,7 +34,8 @@
       var myChatAll = db.ref("/table1/");
       function changeData(){
         var txtAge = document.getElementById("age-text").value;
-        myChatAll.set({age:txtAge, Sittingtime:"16秒" ,Standtime:"41回" , genders:"male",myweight:63,weight:"0.1g"});
+        //myChatAll.set({age:txtAge, Sittingtime:"16秒" ,Standtime:"41回" , genders:"male",myweight:63,weight:"0.1g"});
+        myChatAll.set({age:txtAge});
       }
       
     </script>
