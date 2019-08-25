@@ -1,0 +1,63 @@
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <script src="https://d.line-scdn.net/liff/1.0/sdk.js"></script>
+    <script src="liff.js"></script>
+    <link rel="stylesheet" type="text/css" href="liff.css" />
+  </head>
+
+  <body>
+    <!-- Title -->
+    <h2>スマートクッション</h2>
+    <hr />
+      <img id="loading-animation" class="" src="loading.gif" height="14px" />
+      <span id="status" class="inactive">LINEに接続中</span>
+    <hr />
+    <div id="controls" class="hidden">
+      <!-- Device Info Table -->
+      <table class="device-info-table">
+        
+        <tr>
+          <th>体重：</th>
+          <td><input type="text" class="liffinput"  name="weight" maxlength="3" value="63" id="weight-text"> kg
+          </td>
+        </tr>
+        <tr>
+          <th>年齢：</th>
+          <td><input type="text" class="liffinput" name="age" maxlength="3" id="age-text" value="33"> 才
+          </td>
+        </tr>
+        <tr>
+          <th>性別：</th>
+          <td>
+            
+          <form id="gender">
+                <input type="radio" name="genders" class="liffRadio" value="male" checked="checked">男性
+                <input type="radio" name="genders" class="liffRadio" value="female">女性
+          </form>
+
+          </td>
+        </tr>
+        <tr>
+          <th class="device-info-cell device-info-key"><img src="icon/ico_jumprope.png" alt="飛んだ回数" ></th>
+          <td class="device-info-cell device-info-val" id="click-count">0回</td>
+        </tr>
+        <tr>
+          <th class="device-info-cell device-info-key"><img src="icon/ico_barn.png" alt="消費カロリー" ></th>
+          <td class="device-info-cell device-info-val" id="cal-count">0kcal</td>
+        </tr>
+
+        
+      </table>
+      <hr />
+      <!-- Toggle LED -->
+      <p>
+        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">トレーニング終了</button>
+      </p>
+      <hr />
+    </div>
+  </body>
+
+</html>
