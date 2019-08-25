@@ -23,8 +23,6 @@
         firebase.initializeApp(config);
     </script>
     
-<p><div id="Sittingtime"></div></p>
-<p><div id="Standtime"></div></p>
 <script>
   
   var database = firebase.database();
@@ -37,10 +35,13 @@
 </script>
     
     <!-- Title -->
-    <h2>スマートクッション3</h2>
+    <h2>スマートクッション4</h2>
     <hr />
       <span id="status" class="inactive">データベース接続中</span>
     <hr />
+<p>座ってる時間：<div id="Sittingtime"></div></p>
+<p>立ち上がった回数：<div id="Standtime"></div></p>
+
       <!-- Device Info Table -->
       <table class="device-info-table">
         
