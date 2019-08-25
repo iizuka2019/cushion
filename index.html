@@ -22,13 +22,21 @@
     </script>
     
 <script>
-  var database = firebase.database();
-  var dataRef = database.ref('/table1');
-  dataRef.once("value")
-  .then(function(snapshot) {
-    document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-    document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();
-  });
+  
+  firebase.database().ref('/table1').on('child_added', function(snapshot) {
+//    var data = snapshot.val();
+      document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
+      document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
+});
+  
+//  var database = firebase.database();
+//  var dataRef = database.ref('/table1');
+//  dataRef.once("value")
+  
+ // .then(function(snapshot) {
+ //   document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
+  //  document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();
+  //});
 </script>
     
     <!-- Title -->
