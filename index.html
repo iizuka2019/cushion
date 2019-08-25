@@ -33,8 +33,8 @@
       var db = firebase.database();
       var myChatAll = db.ref("/table1/");
       function changeData(){
-        var text = document.getElementById("age-text").value;
-        myChatAll.set({title:"age", text:text});
+        var txtAge = document.getElementById("age-text").value;
+        myChatAll.set({age:txtAge, Sittingtime:"16秒" ,Standtime:"41回" , genders:"male",myweight:63,weight:"0.1g"});
       }
       
     </script>
