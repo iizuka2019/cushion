@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="stylesheet" type="text/css" href="cushion.css" />
-      <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase-database.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
    </head>
 
   <body>
@@ -22,18 +22,19 @@
         };
         firebase.initializeApp(config);
     </script>
-    <script>
-            // データベースの参照を準備
-            var messagesRef = firebase.database().ref().child('table1')
-        
-            // 既存メッセージを表示
-            messagesRef.on('child_added', function(snapshot) {
-                var msg = snapshot.val();
-                $('<li>').text(msg.Sittingtime + ': ' + msg.Standtime).prependTo('#table1');
-            });
-        
-        </script>
     
+<p><div id="Sittingtime"></div></p>
+<p><div id="Standtime"></div></p>
+<script>
+  
+  var database = firebase.database();
+  var dataRef = database.ref('/table1');
+  dataRef.once("value")
+  .then(function(snapshot) {
+    document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
+    document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();
+  });
+</script>
     
     <!-- Title -->
     <h2>スマートクッション2</h2>
