@@ -27,6 +27,22 @@
       document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
       document.getElementById("age-text").value = snapshot.child("age").val();
       document.getElementById("weight-text").value = snapshot.child("myweight").val();
+        
+      var strGender =  snapshot.child("genders").val();
+      //document.getElementById("gender").value = snapshot.child("genders").val();
+        
+      // form要素を取得
+      var element = document.getElementById("gender") ;
+
+      // form要素内のラジオボタングループ(name="hoge")を取得
+      var elements = element.genders ;
+        if (strGender=='male'){
+          elements[0].checked = true ;
+        }else{
+          elements[1].checked = true ;
+        }
+        
+        
 });
     
     </script>
@@ -70,8 +86,8 @@
           <td>
             
           <form id="gender">
-                <input type="radio" name="genders" class="liffRadio" value="male" checked="checked">男性
-                <input type="radio" name="genders" class="liffRadio" value="female">女性
+                <input type="radio" name="genders" class="liffRadio" value="male" onchange="changeData()" checked="checked">男性
+                <input type="radio" name="genders" class="liffRadio" value="female" onchange="changeData()">女性
           </form>
 
           </td>
