@@ -21,34 +21,45 @@
         firebase.initializeApp(config);
     </script>
     
+    //読み込み処理
     <script>
-      firebase.database().ref('/table1/').on('value',function(snapshot) {
-      document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-      document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
-      document.getElementById("age-text").value = snapshot.child("age").val();
-      document.getElementById("weight-text").value = snapshot.child("myweight").val();
+      var today = new Date();
+      var strYear=today.getFullYear();
+      var strMonth=today.getMonth()+1;
+      var strDate=today.getDate();
 
-        
-      var strGender =  snapshot.child("genders").val();
-      //document.getElementById("gender").value = snapshot.child("genders").val();
-        
-      // form要素を取得
-      var element = document.getElementById("gender") ;
-      var elements = element.genders ;
-        if (strGender=='male'){
-          elements[0].checked = true ;
-        }else{
-          elements[1].checked = true ;
-        }
-        
-        
-});
+      firebase.database().ref('/table1/').on('value',function(snapshot) {
+        document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
+        document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
+        document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
+      });
+      
+      firebase.database().ref('/myinfo/').on('value',function(snapshot) {
+        document.getElementById("age-text").value = snapshot.child("age").val();
+        document.getElementById("weight-text").value = snapshot.child("myweight").val();        
+        var strGender =  snapshot.child("genders").val();
+        var element = document.getElementById("gender") ;
+        var elements = element.genders ;
+          if (strGender=='male'){
+            elements[0].checked = true ;
+          }else{
+            elements[1].checked = true ;
+          }
+      });
     
     </script>
     
+    //書き込み処理
+
     <script>
+      var today = new Date();
+      var strYear=today.getFullYear();
+      var strMonth=today.getMonth()+1;
+      var strDate=today.getDate();
+            
       var db = firebase.database();
-      var myChatAll = db.ref("/table1/");
+      
+      var myChatAll = db.ref("/myinfo/");
       function changeData(){
         var txtAge = document.getElementById("age-text").value;
         var txtWeight = document.getElementById("weight-text").value;
@@ -62,10 +73,8 @@
         }else{
           strGender = 'female' ;
         }
-
-        //myChatAll.set({age:txtAge, Sittingtime:"16秒" ,Standtime:"41回" , genders:"male",myweight:txtWeight,weight:"0.1g"});
-        myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight,weight:"0.1",Sittingtime:"16" ,Standtime:"41"});
-        //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight, weight:weight,Sittingtime:Sittingtime ,Standtime:Standtime });
+        //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight,weight:"0.1",Sittingtime:"16" ,Standtime:"41"});
+        myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight});
       }
       
     </script>
@@ -73,7 +82,8 @@
     <!-- Title -->
     <h2>スマートクッション10</h2>
     <hr />
-      <span id="status" class="inactive">データベース接続中</span>
+      <span id="status" class="inactive">aa</span>
+
     <hr />
 
       <!-- Device Info Table -->
