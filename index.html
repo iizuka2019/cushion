@@ -26,12 +26,13 @@
       var today = new Date();
       var strYear=today.getFullYear();
       var strMonth=today.getMonth()+1;
-      var strDate=today.getDate();
+      var strDay=today.getDate();
 
       firebase.database().ref('/table1/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
-        document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
+        //document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
+        document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
       });
       
       firebase.database().ref('/myinfo/').on('value',function(snapshot) {
@@ -126,7 +127,8 @@
       <hr />
       <!-- Toggle LED -->
       <p>
-        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">トレーニング終了</button>
+        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">←</button>
+        <button id="btn-led-toggle" class="btn btn-led-toggle" onclick="handlerToggleLed()">→</button>
       </p>
       <hr />
   </body>
