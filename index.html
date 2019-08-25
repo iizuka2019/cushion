@@ -21,23 +21,23 @@
         firebase.initializeApp(config);
     </script>
     
-<script>
+    <script>
   
   firebase.database().ref('/table1/').on('value',function(snapshot) {
-//    var data = snapshot.val();
       document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
       document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
+    
+    
+    
+      var db = firebase.database();
+      var myChatAll = db.ref("/table1/");
+      function changeData(){
+        var text = document.getElementById("age").value;
+        myChatAll.set({title:"age-text", text:text});
+      }
 });
-  
-//  var database = firebase.database();
-//  var dataRef = database.ref('/table1');
-//  dataRef.once("value")
-  
- // .then(function(snapshot) {
- //   document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-  //  document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();
-  //});
-</script>
+    
+    </script>
     
     <!-- Title -->
     <h2>スマートクッション6</h2>
