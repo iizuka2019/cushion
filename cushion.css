@@ -5,7 +5,7 @@ body,table {
   margin: 0pt;
   text-align: center;
   padding-top: 18pt;
-  /* background-color: #0099ff;*/ 
+  background-color: #0099ff;
   color: #ffffff;
 }
 #wrapper {
@@ -16,6 +16,11 @@ body,table {
 
 divSel {
   background-color: #d1f4fa;
+  width: 300px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #cccccc;
+  margin: 30px auto;
 }
 
 
