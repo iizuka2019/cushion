@@ -8,30 +8,12 @@ body,table {
   background-color: #0099ff;
   color: #ffffff;
 }
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-divSel {
-  background-color: #d1f4fa;
-  width: 300px;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #cccccc;
-  margin: 30px auto;
-}
-
 
 footer {
   margin-top: auto;
-  background-color: #edf9fc;
+  background-color: #0099ff;
 }
 
-p {
-    padding: 0pt 14pt;
-}
 
 input.liffinput  { 
     font-size: 14pt;
