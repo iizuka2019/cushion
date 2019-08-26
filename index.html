@@ -83,6 +83,13 @@
       }
       
     </script>
+    <script>
+      function handlerToggleLed(strLR) {
+        if(strLR == "left"){
+          document.getElementById("status").innerHTML =strYear + '年' + 02 + '月' + strDay + '日'
+        }
+      }
+    </script>
     
     <!-- Title -->
     <h2>スマートクッション</h2>
@@ -132,10 +139,10 @@
      <table class="device-info-table">
       <tr>
         <th>
-          <button id="btn-led-toggle-left " class="btn btn-led-toggle" onclick="handlerToggleLed()">＜</button>
+          <button id="btn-led-toggle-left " class="btn btn-led-toggle" onclick="handlerToggleLed("left")">＜</button>
         </th>
         <td>
-          <button id="btn-led-toggle-right" class="btn btn-led-toggle" onclick="handlerToggleLed()">＞</button>
+          <button id="btn-led-toggle-right" class="btn btn-led-toggle" onclick="handlerToggleLed("right")">＞</button>
         </td>
       </tr>
     </table>
