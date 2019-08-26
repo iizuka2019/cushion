@@ -41,8 +41,8 @@ input.liffRadio {
 
 .btn-led-toggle {
     box-shadow: 0 4pt 8pt 0 rgba(0,0,0,0.2), 0 3pt 10pt 0 rgba(0,0,0,0.19);
-    color: #f8f9fa; /* Light */
-    background-color: #ffffff; /* Tranig-End Red */
+    color: #0099ff; /* Light */
+    background-color: #f8f9fa; /* Tranig-End Red */
     width: 80pt;
     font-weight: bold;
     height: 40pt;
@@ -53,7 +53,7 @@ input.liffRadio {
 .btn-led-toggle:active {
     transform: translateY(4pt);
     box-shadow: 0 2pt 4pt 0 rgba(0,0,0,0.2), 0 1pt 5pt 0 rgba(0,0,0,0.19);
-    background-color: #e30e2a; /* Tranig-End Red */
+    background-color: #0099ff; /* Tranig-End Red */
 }
 
 .led-on, .led-on:active {
