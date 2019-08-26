@@ -37,6 +37,7 @@
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
         //document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
         document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
+        document.getElementById("TargetDate-text").innerHTML =today
       });
       
       firebase.database().ref('/myinfo/').on('value',function(snapshot) {
@@ -86,7 +87,7 @@
     <script>
       function handlerToggleLed(strLR) {
         if(strLR == "left"){
-          var today = new Date();
+          var today = document.getElementById("TargetDate-text").innerHTML;
           today.setDate(today.getDate() - 1);          
           
           var strYear=today.getFullYear();
@@ -102,7 +103,7 @@
     <h2>スマートクッション</h2>
     <hr />
       <span id="status" class="liffinput"></span>
-
+      <input type="HIDDEN" name="TargetDate" id="TargetDate-text" >
     <hr />
 
       <!-- Device Info Table -->
