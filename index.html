@@ -86,7 +86,12 @@
     <script>
       function handlerToggleLed(strLR) {
         if(strLR == "left"){
-          document.getElementById("status").innerHTML =strYear + '年' + 02 + '月' + strDay + '日'
+          var strDate =document.getElementById("status").innerHTML;
+          result = strDate.match( (\d+)年(\d+)月(\d+)日/ );
+          var date1 = Date.parse(result); // parse()で
+          var date2 = new Date(result); // コンストラクターで
+          
+          document.getElementById("status").innerHTML =date2
         }
       }
     </script>
