@@ -1,5 +1,10 @@
 
-body, table {
+body, #wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+},
+table {
   font-size: 14pt;
   font-family: "Montserrat", sans-serif;
   margin: 0pt;
@@ -7,6 +12,15 @@ body, table {
   padding-top: 18pt;
   background-color: #0099ff;
   color: #ffffff;
+}
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
 
 p {
