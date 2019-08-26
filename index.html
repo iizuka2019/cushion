@@ -86,12 +86,14 @@
     <script>
       function handlerToggleLed(strLR) {
         if(strLR == "left"){
-          var strDate =document.getElementById("status").innerHTML;
-          result = strDate.match( (\d+)年(\d+)月(\d+)日/ );
-          var date1 = Date.parse(result); // parse()で
-          var date2 = new Date(result); // コンストラクターで
+          var today = new Date();
+          today.setDate(today.getDate() - 1);          
           
-          document.getElementById("status").innerHTML =date2
+          var strYear=today.getFullYear();
+          var strMonth=today.getMonth()+1;
+          var strDay=today.getDate();
+          
+          document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
         }
       }
     </script>
