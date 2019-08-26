@@ -99,6 +99,15 @@ input.liffRadio {
     padding: 0;
 }
 
+th{
+  width: 70%;
+}
+
+td{
+  width: 30%;
+}
+
+
 .device-info-cell {
     text-align: left;
     vertical-align: middle;
