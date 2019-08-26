@@ -1,10 +1,5 @@
 
-body, #wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-},
-table {
+body,table {
   font-size: 14pt;
   font-family: "Montserrat", sans-serif;
   margin: 0pt;
