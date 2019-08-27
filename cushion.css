@@ -1,6 +1,6 @@
 
 body,table {
-  font-size: 14px;
+  font-size: 14pt;
   font-family: "Montserrat", sans-serif;
   margin: 0pt;
   text-align: center;
@@ -30,7 +30,7 @@ footer{
 }
 
 input.liffinput  { 
-    font-size: 14px;
+    font-size: 14pt;
     font-family: "Montserrat", sans-serif;
     text-align: center;
     width: 50px;
