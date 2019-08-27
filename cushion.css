@@ -26,7 +26,7 @@ footer{
   /*background-color: #0099ff;*/
 
  position: absolute;/*←絶対位置*/
-    bottom: 0; /*下に固定*/
+    /*bottom: 0; 下に固定*/
 }
 
 input.liffinput  { 
