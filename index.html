@@ -46,14 +46,14 @@
       var strYear=today.getFullYear();
       var strMonth=today.getMonth()+1;
       var strDay=today.getDate();
-      var strDataW="";
+      var strDataW = '0';
       
       firebase.database().ref('/table1/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
         
         strDataW=snapshot.child("Standtime").val();
-        strDataW = '4';
-        
+        strDataW = strDataW.replace( '回', '' );
+        strDataW = Number(strDataW);
         alert(snapshot.child("Standtime").val());
         
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
