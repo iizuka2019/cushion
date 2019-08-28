@@ -54,7 +54,6 @@
         strDataW=snapshot.child("Standtime").val();
         strDataW = strDataW.replace( '回', '' );
         strDataW = Number(strDataW);
-        alert(snapshot.child("Standtime").val());
         
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
         //document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
