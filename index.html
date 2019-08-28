@@ -52,7 +52,7 @@
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
         document.getElementById("st-sum").innerHTML = snapshot.child("st-sum").val();
         
-        strDataW=snapshot.child("Standtime").val();
+        strDataW=snapshot.child("st-sum").val();
         strDataW = strDataW.replace( '回', '' );
         strDataW = Number(strDataW);
         
@@ -162,11 +162,11 @@
           <td class="liffinput" id="st-sum">秒</td>          
         </tr>
         <tr>
-          <th>座ってる時間：</th>
+          <th>連続座位時間：</th>
           <td class="liffinput" id="Sittingtime">秒</td>          
         </tr>
         <tr>
-          <th>立上がった回数：</th>
+          <th>立上り回数/日：</th>
           <td class="liffinput" id="Standtime">回</td>
         </tr>
       </table>
