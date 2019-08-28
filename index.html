@@ -52,7 +52,7 @@
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
         
         strDataW=snapshot.child("Standtime").val();
-        strDataW.replace( strDataW, '回' );
+        strDataW = '4';
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
         //document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
         document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
