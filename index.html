@@ -53,6 +53,9 @@
         
         strDataW=snapshot.child("Standtime").val();
         strDataW = '4';
+        
+        alert(snapshot.child("Standtime").val());
+        
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
         //document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
         document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
