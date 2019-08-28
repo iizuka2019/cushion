@@ -53,8 +53,9 @@
         document.getElementById("st-sum").innerHTML = snapshot.child("st-sum").val();
         
         strDataW=snapshot.child("st-sum").val();
+        
         strDataW = strDataW.replace( '回', '' );
-        strDataW = Number(strDataW);
+        strDataW = Number(strDataW)/24*100;
         
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
         //document.getElementById("status").innerHTML = snapshot.child("TargetDate").val();  
