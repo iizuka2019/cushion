@@ -59,7 +59,8 @@
       firebase.database().ref('/table1/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
         //document.getElementById("st-sum").innerHTML = snapshot.child("stsum").val();
-        if(snapshot.child("Sittingtime").val()==0) {
+
+        if(snapshot.child("Sittingtime").val()=="0秒") {
             document.getElementById("statusMan").innerHTML = "いま、すわってないよー"
         }else{
             document.getElementById("statusMan").innerHTML = "いま、すわってるよー"
