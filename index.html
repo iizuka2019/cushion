@@ -58,7 +58,7 @@
       
       firebase.database().ref('/table1/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-        document.getElementById("st-sum").innerHTML = snapshot.child("stsum").val();
+        //document.getElementById("st-sum").innerHTML = snapshot.child("stsum").val();
         
         strDataW=snapshot.child("stsum").val();
         strDataW = Number(strDataW)/60/60;
