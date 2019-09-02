@@ -63,40 +63,6 @@
         document.getElementById("TargetDate-text").innerHTML =today
       });
       
-      firebase.database().ref('/myinfo/').on('value',function(snapshot) {
-        document.getElementById("age-text").value = snapshot.child("age").val();
-        document.getElementById("weight-text").value = snapshot.child("myweight").val();        
-        var strGender =  snapshot.child("genders").val();
-        var element = document.getElementById("gender") ;
-        var elements = element.genders ;
-          if (strGender=='male'){
-            elements[0].checked = true ;
-          }else{
-            elements[1].checked = true ;
-          }
-        
-        $( document ).ready(function() { // 6,32 5,38 2,34
-           var svg=document.getElementById('test-circle7');
-          while (svg.firstChild)
-          svg.removeChild(svg.firstChild);
-          
-        $("#test-circle7").circliful({
-            animation: 0,
-            animationStep: 1,
-            animateInView: true,
-            percent: strDataW,
-            textSize: 28,
-            textStyle: 'font-size: 12px;',
-            textColor: '#666',
-            progressColor: {10: '#00A0E9', 20: '#009E96', 30: '#009944', 40: '#8FC31F', 50: '#FFF100', 60: '#F39800', 70: '#EA5532', 80: '#EA5532', 90:'#E91E63', 100:'#f44336'}
-        });
-    });
-      });
-    
-
-      
-
-
     </script>
     
 <section class="container">
@@ -188,48 +154,7 @@
   
   
   
-      <table class="device-info-table">
-        <tr>
-          <th>体重：</th>
-          <td><input type="tel" class="liffinput"  name="weight" maxlength="3" id="weight-text" onchange="changeData()"> kg
-          </td>
-        </tr>
-      </table>
 
-  <table class="device-info-table">
-        <tr>
-          <th>年齢：</th>
-          <td><input type="tel" class="liffinput" name="age" maxlength="3" id="age-text" onchange="changeData()"> 才
-    
-          </td>
-        </tr>
-      </table>
-        
-      <table class="device-info-table">
-        <tr>
-          <th>性別：</th>
-          <td>
-            
-          <form id="gender">
-                <input type="radio" name="genders" class="liffRadio" value="male" onchange="changeData()">男性
-                <input type="radio" name="genders" class="liffRadio" value="female" onchange="changeData()">女性
-          </form>
-
-          </td>
-        </tr>
-      </table>
-    
-      <!-- Toggle LED -->
-     <table class="device-info-table">
-      <tr>
-        <th>
-          <button id="btn-led-toggle-left " class="btn btn-led-toggle" onclick="handlerToggleLed('left')">＜</button>
-        </th>
-        <td>
-          <button id="btn-led-toggle-right" class="btn btn-led-toggle" onclick="handlerToggleLed('right')">＞</button>
-        </td>
-      </tr>
-    </table>
     <!--
     <footer>
       <a href="https://twitter.com/share" class="twitter-share-button" data-text="結果報告：今日は5時間10分も座ってたよー立ち上がった回数は8回だよーやばいよー" data-url="https://www.takano-hw.com/" data-size="large" data-hashtags="タカノ">Tweet</a>
