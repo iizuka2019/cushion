@@ -58,9 +58,9 @@
       
       firebase.database().ref('/table1/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-        document.getElementById("st-sum").innerHTML = snapshot.child("st-sum").val();
+        document.getElementById("st-sum").innerHTML = snapshot.child("stsum").val();
         
-        strDataW=snapshot.child("st-sum").val();
+        strDataW=snapshot.child("stsum").val();
         
         strDataW = strDataW.replace( '回', '' );
         strDataW = Number(strDataW)/8*100;
@@ -166,7 +166,7 @@
       <table class="device-info-table">
         <tr>
           <th>一日累計座位時間：</th>
-          <td class="liffinput" id="st-sum">秒</td>
+          <td class="liffinput" id="stsum">秒</td>
         </tr>
       </table>
 </p>
