@@ -61,8 +61,9 @@
         document.getElementById("st-sum").innerHTML = snapshot.child("stsum").val();
         
         strDataW=snapshot.child("stsum").val();
-        strDataW = Number(strDataW)/60/60;        
+        strDataW = Number(strDataW)/60/60;
         strDataW = Number(strDataW)/8*100;
+        document.getElementById("st-sum").innerHTML = strDataW & "時間/8時間"
         
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
         document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
