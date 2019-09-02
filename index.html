@@ -66,14 +66,7 @@
 
     
             firebase.database().ref('/myinfo/').on('value',function(snapshot) {
-        var strGender =  snapshot.child("genders").val();
-        var element = document.getElementById("gender") ;
-        var elements = element.genders ;
-          if (strGender=='male'){
-            elements[0].checked = true ;
-          }else{
-            elements[1].checked = true ;
-          }
+        
         
         $( document ).ready(function() { // 6,32 5,38 2,34
            var svg=document.getElementById('test-circle7');
