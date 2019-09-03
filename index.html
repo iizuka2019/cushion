@@ -214,6 +214,7 @@ $('#twitter_button').click(function() {
 　　//ツイート内容をセット
 　　var tw_contents = ("結果報告：今日は" + strSit + "座っていたよ。立ち上がった回数は" + strStandCount + "だよーやばいよー");
 　　var url = "[my_home_url]";
+  alert(tw_contents);
 　　//#twitter_buttonのhrefにパラメーターを渡す
 　　window.open().location.href = ("https://twitter.com/share?url=" + url + "&text=" + tw_contents + "&count=none&lang=ja");
 });
@@ -221,13 +222,6 @@ $('#twitter_button').click(function() {
   
   
   
-  
-
-    <!--
-    <footer>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-text="結果報告：今日は5時間10分も座ってたよー立ち上がった回数は8回だよーやばいよー" data-url="https://www.takano-hw.com/" data-size="large" data-hashtags="タカノ">Tweet</a>
-    </footer>
--->
 </section>
     
     
