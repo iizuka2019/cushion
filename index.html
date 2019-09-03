@@ -58,12 +58,11 @@
       
       firebase.database().ref('/table1/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-        //document.getElementById("st-sum").innerHTML = snapshot.child("stsum").val();
 
         if(snapshot.child("Sittingtime").val()=="0秒") {
             document.getElementById("statusMan").innerHTML = "いま、すわってないよー"
         }else{
-            document.getElementById("statusMan").innerHTML = "いま、すわってるよー"
+            document.getElementById("statusMan").innerHTML = "いま、すわってるよ。"
         }
 
         strDataW=snapshot.child("stsum").val();
@@ -79,28 +78,24 @@
         document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
         document.getElementById("TargetDate-text").innerHTML =today
       });
-      
 
-    
-            firebase.database().ref('/myinfo/').on('value',function(snapshot) {
-        
-        
+      firebase.database().ref('/myinfo/').on('value',function(snapshot) {
         $( document ).ready(function() { // 6,32 5,38 2,34
-           var svg=document.getElementById('test-circle7');
+          var svg=document.getElementById('test-circle7');
           while (svg.firstChild)
-          svg.removeChild(svg.firstChild);
+            svg.removeChild(svg.firstChild);
           
-        $("#test-circle7").circliful({
-            animation: 0,
-            animationStep: 1,
-            animateInView: true,
-            percent: strDataW,
-            textSize: 28,
-            textStyle: 'font-size: 12px;',
-            textColor: '#666',
-            progressColor: {10: '#00A0E9', 20: '#009E96', 30: '#009944', 40: '#8FC31F', 50: '#FFF100', 60: '#F39800', 70: '#EA5532', 80: '#EA5532', 90:'#E91E63', 100:'#f44336'}
-        });
-    });
+            $("#test-circle7").circliful({
+                animation: 0,
+                animationStep: 1,
+                animateInView: true,
+                percent: strDataW,
+                textSize: 28,
+                textStyle: 'font-size: 12px;',
+                textColor: '#666',
+                progressColor: {10: '#00A0E9', 20: '#009E96', 30: '#009944', 40: '#8FC31F', 50: '#FFF100', 60: '#F39800', 70: '#EA5532', 80: '#EA5532', 90:'#E91E63', 100:'#f44336'}
+            });
+          });
       });
     </script>
     
@@ -155,7 +150,6 @@
     <!-- Title -->
   
 <p class="wf-roundedmplus1c"><a href="mypage.html"><i class="fa fa-info-circle fa-lg"></i></a>スマートクッション(仮)
-    <h2></h2>
 </p>
     <hr />
 <p class="wf-roundedmplus1c">
