@@ -200,8 +200,27 @@
       </table>
 </p>
   
+
+ 
+<!--ツイートボタン-->
+<a id="twitter_button" class="twitter-share-button" >Tweet</a>
+   
+<script>
+//ツイートボタンが押された時の処理
+$('#twitter_button').click(function() {
+    //出目をHTMLから取得する
+    var strSit = document.getElementById("st-sum").innerHTML;
+    var strStandCount = document.getElementById("Standtime").innerHTML;
+　　//ツイート内容をセット
+　　var tw_contents = ("結果報告：今日は" + strSit + "座っていたよ。立ち上がった回数は" + strStandCount + "だよーやばいよー");
+　　var url = "[my_home_url]";
+　　//#twitter_buttonのhrefにパラメーターを渡す
+　　window.open().location.href = ("https://twitter.com/share?url=" + url + "&text=" + tw_contents + "&count=none&lang=ja");
+});
+</script>
   
-      <a href="https://twitter.com/share" class="twitter-share-button" data-text='結果報告：今日は' + document.getElementById("st-sum").innerHTML + 'も座ってたよー立ち上がった回数は' + document.getElementById("Standtime").innerHTML + 'だよーやばいよー' data-url="https://www.takano-hw.com/" data-size="large" data-hashtags="タカノ">Tweet</a>
+  
+  
   
 
     <!--
