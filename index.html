@@ -214,7 +214,7 @@ $('#twitter_button').click(function() {
     var strSit = document.getElementById("st-sum").innerHTML;
     var strStandCount = document.getElementById("Standtime").innerHTML;
 　　//ツイート内容をセット
-　　var tw_contents = ("結果報告：今日は" + strSit + "座っていたよ。立ち上がった回数は" + strStandCount + "だよーやばいよー");
+　　var tw_contents = ("結果報告：今日は" + strSit + "座っていたよ。立ち上がった回数は" + strStandCount + "回だよーやばいよー");
   alert(tw_contents);
 　　//#twitter_buttonのhrefにパラメーターを渡す
 　　window.open().location.href = ("https://twitter.com/share?url=" + url + "&text=" + tw_contents + "&count=none&lang=ja");
