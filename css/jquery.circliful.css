@@ -28,7 +28,7 @@
 }
 
 .svg-container {
-    width: 100%;
+    width: 70%;
     margin: 0 auto;
     overflow: visible;
     position: relative;
@@ -44,7 +44,7 @@ svg .icon {
 
 .color-box {
     width: 15px;
-    height: 0px;
+    height: 15px;
     border-radius: 2px;
     display: inline-block;
     float: left;
