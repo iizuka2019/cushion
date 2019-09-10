@@ -17,7 +17,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>すまほー</title>
@@ -168,6 +168,112 @@
         }
       }
     </script>
+  
+  <script>
+    var ctx = document.getElementById("canvas").getContext("2d")
+new Chart(
+  ctx, 
+  {
+    type: 'bar',
+    data: {
+      labels: [
+        '2011',
+        '2012',
+        '2013',
+      ],
+      datasets: [
+        {
+          type: 'line',
+          label: '日照時間',
+          backgroundColor: 'rgb(33, 33, 33)',
+          borderColor: 'rgb(33, 33, 33)',
+          fill: false,
+          yAxisID: 'yaxis2',
+          tension: 0,
+          data: [
+            1664,
+            1663,
+            1696
+          ]
+        },
+        {
+          type: 'bar',
+          label: '日本なし',
+          stack: 'なし',
+          backgroundColor: 'rgb(220, 215, 80)',
+          yAxisID: 'yaxis1',
+          data: [
+            1470,
+            1440,
+            1410
+          ]
+        },
+        {
+          type: 'bar',
+          label: '西洋なし',
+          stack: 'なし',
+          backgroundColor: 'rgb(154, 219, 79)',
+          yAxisID: 'yaxis1',
+          data: [
+            14700,
+            12600,
+            15200
+          ]
+        },
+        {
+          type: 'bar',
+          label: 'かき',
+          stack: 'かき',
+          backgroundColor: 'rgb(219, 144, 79)',
+          yAxisID: 'yaxis1',
+          data: [
+            7640,
+            7210,
+            6050
+          ]
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      legend: {
+        position: 'bottom'
+      },
+      scales: {
+        xAxes: [
+          { stacked: true }
+        ],
+        yAxes: [
+          { 
+            id: 'yaxis1',
+            position: 'left',
+            scaleLabel: {
+              display: true,
+              labelString: '生産量(t)',
+            },
+            stacked: true 
+          },
+          { 
+            id: 'yaxis2',
+            position: 'right',
+            scaleLabel: {
+              display: true,
+              labelString: '日照時間(h)',
+            },
+            ticks: {
+              max: 1700,
+              min: 1600,
+            },
+            gridLines: {
+              drawOnChartArea: false, 
+            },
+          }
+        ]
+      }
+    },
+  }
+)
+  </script>
     
     <!-- Title -->
   
@@ -238,7 +344,9 @@ $('#twitter_button').click(function() {
 });
 </script>
   
-  
+  <div style="width: 100%; height: 100%;">
+    <canvas id="canvas" style="width: 100%; height: 100%;"/>
+  </div>
   
 </section>
     
