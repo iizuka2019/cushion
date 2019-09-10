@@ -60,9 +60,22 @@
     //読み込み処理
       var today = new Date();
       var strYear=today.getFullYear();
-      var strMonth=today.getMonth()+1;
-      var strDay=today.getDate();
+      var strMonth=dateToStrPad0Day(today.getMonth()+1);
+      var strDay=dateToStrPad0Day(today.getDate());
       var strDataW = '0';
+      
+      
+      function dateToStrPad0Day(date) {
+        var format = "DD";
+        format = format.replace(/DD/g, ('0' + date.getDate()).slice(-2));
+        return format;
+      }
+      
+      function dateToStrPad0Month(date) {
+        var format = "MM";
+        format = format.replace(/MM/g, ('0' + date.getDate()).slice(-2));
+        return format;
+      }
       //' + strYear + strMonth + strDay + '
       firebase.database().ref('/20190910/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
