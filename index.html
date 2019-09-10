@@ -61,7 +61,7 @@
       var strDay=today.getDate();
       var strDataW = '0';
       
-      firebase.database().ref('/20190910/').on('value',function(snapshot) {
+      firebase.database().ref('/' + strYear + strMonth + strDay + '/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
 
         if(snapshot.child("Sittingtime").val()=="0秒") {
@@ -80,8 +80,8 @@
         
         
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
-        //document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
-        document.getElementById("status").innerHTML ='2019年' + '09月' + '03日'
+        document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
+        //document.getElementById("status").innerHTML ='2019年' + '09月' + '03日'
         document.getElementById("TargetDate-text").innerHTML =today
       });
 
