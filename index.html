@@ -169,6 +169,83 @@
       }
     </script>
   
+    
+    <!-- Title -->
+  
+<p class="wf-roundedmplus1c">
+  <a href="mypage.html">
+    <i class="fa fa-info-circle fa-lg"></i></a>CHILQ -シルク- </p>
+<hr>
+
+<p class="wf-roundedmplus1c">
+  <table class="device-info-table">
+    <tr>
+      <td colspan="2" align="center"><span id="status"  ></span></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><span id="statusMan"  ></span></td>
+    </tr>
+  </table>
+</p>
+    
+      <input type="HIDDEN" name="TargetDate" id="TargetDate-text" >
+
+      <!-- Device Info Table -->
+<hr>
+  
+<p class="wf-roundedmplus1c">
+      <table class="device-info-table">
+        <tr>
+          <th>一日累計座位時間：</th>
+          <td class="liffinput" id="st-sum">秒</td>
+        </tr>
+        <tr>
+          <th>連続座位時間：</th>
+          <td class="liffinput" id="Sittingtime">秒</td>          
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <div class="col-lg-2">
+                <div id="test-circle7"></div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <th>立上り回数/日：</th>
+          <td class="liffinput" id="Standtime">0</td>
+        </tr>
+      </table>
+</p>
+  
+
+ 
+<p class="wf-roundedmplus1c">
+<!--ツイートボタン-->
+<a id="twitter_button" >一日の結果をつぶやくよ。</a>
+</p>
+   
+<script>
+//ツイートボタンが押された時の処理
+$('#twitter_button').click(function() {
+    //出目をHTMLから取得する
+    var strSit = document.getElementById("st-sum").innerHTML;
+    var strStandCount = document.getElementById("Standtime").innerHTML;
+　　//ツイート内容をセット
+　　var tw_contents = ("結果報告：今日は" + strSit + "座っていたよ。立ち上がった回数は" + strStandCount + "回だよーやばいよー");
+　　var tw_tag = ("座ってる時間#立ち上がれ日本人");
+    var url = "https://www.takano-hw.com/";
+  //#twitter_buttonのhrefにパラメーターを渡す
+　　window.open().location.href = ("https://twitter.com/share?url=" + url + "&text=" + tw_contents + "&hashtags=" + tw_tag +"&count=none&lang=ja");
+});
+</script>
+  
+  <div style="width: 100%; height: 100%;">
+    <canvas id="myChart" style="width: 100%; height: 100%;"/>
+  </div>
+  
+</section>
+    
+    
   <script>
     //var ctx = document.getElementById("canvas").getContext("2d")
     var canvas = document.getElementById('myChart');
@@ -277,83 +354,6 @@ new Chart(
   }
 )
   </script>
-    
-    <!-- Title -->
-  
-<p class="wf-roundedmplus1c">
-  <a href="mypage.html">
-    <i class="fa fa-info-circle fa-lg"></i></a>CHILQ -シルク- </p>
-<hr>
-
-<p class="wf-roundedmplus1c">
-  <table class="device-info-table">
-    <tr>
-      <td colspan="2" align="center"><span id="status"  ></span></td>
-    </tr>
-    <tr>
-      <td colspan="2" align="center"><span id="statusMan"  ></span></td>
-    </tr>
-  </table>
-</p>
-    
-      <input type="HIDDEN" name="TargetDate" id="TargetDate-text" >
-
-      <!-- Device Info Table -->
-<hr>
-  
-<p class="wf-roundedmplus1c">
-      <table class="device-info-table">
-        <tr>
-          <th>一日累計座位時間：</th>
-          <td class="liffinput" id="st-sum">秒</td>
-        </tr>
-        <tr>
-          <th>連続座位時間：</th>
-          <td class="liffinput" id="Sittingtime">秒</td>          
-        </tr>
-        <tr>
-          <td colspan="2" align="center">
-            <div class="col-lg-2">
-                <div id="test-circle7"></div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <th>立上り回数/日：</th>
-          <td class="liffinput" id="Standtime">0</td>
-        </tr>
-      </table>
-</p>
-  
-
- 
-<p class="wf-roundedmplus1c">
-<!--ツイートボタン-->
-<a id="twitter_button" >一日の結果をつぶやくよ。</a>
-</p>
-   
-<script>
-//ツイートボタンが押された時の処理
-$('#twitter_button').click(function() {
-    //出目をHTMLから取得する
-    var strSit = document.getElementById("st-sum").innerHTML;
-    var strStandCount = document.getElementById("Standtime").innerHTML;
-　　//ツイート内容をセット
-　　var tw_contents = ("結果報告：今日は" + strSit + "座っていたよ。立ち上がった回数は" + strStandCount + "回だよーやばいよー");
-　　var tw_tag = ("座ってる時間#立ち上がれ日本人");
-    var url = "https://www.takano-hw.com/";
-  //#twitter_buttonのhrefにパラメーターを渡す
-　　window.open().location.href = ("https://twitter.com/share?url=" + url + "&text=" + tw_contents + "&hashtags=" + tw_tag +"&count=none&lang=ja");
-});
-</script>
-  
-  <div style="width: 100%; height: 100%;">
-    <canvas id="myChart" style="width: 100%; height: 100%;"/>
-  </div>
-  
-</section>
-    
-    
   </body>
 
 </html>
