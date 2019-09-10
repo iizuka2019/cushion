@@ -67,13 +67,13 @@
       
       function dateToStrPad0Day(date) {
         var format = "DD";
-        format = format.replace(/DD/g, ('0' + date.getDate()).slice(-2));
+        format = format.replace(/DD/g, ('0' + date).slice(-2));
         return format;
       }
       
       function dateToStrPad0Month(date) {
         var format = "MM";
-        format = format.replace(/MM/g, ('0' + date.getDate()).slice(-2));
+        format = format.replace(/MM/g, ('0' + date).slice(-2));
         return format;
       }
       //' + strYear + strMonth + strDay + '
