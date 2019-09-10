@@ -63,8 +63,8 @@
       var strMonth=today.getMonth()+1;
       var strDay=today.getDate();
       var strDataW = '0';
-      
-      firebase.database().ref('/' + strYear + strMonth + strDay + '/').on('value',function(snapshot) {
+      //' + strYear + strMonth + strDay + '
+      firebase.database().ref('/20190910/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
 
         if(snapshot.child("Sittingtime").val()=="0秒") {
