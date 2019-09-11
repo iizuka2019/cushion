@@ -257,23 +257,23 @@ new Chart(
     type: 'bar',
     data: {
       labels: [
-        '2011',
-        '2012',
-        '2013',
+        '2019/09/09',
+        '2019/09/10',
+        '2019/09/11',
       ],
       datasets: [
         {
           type: 'line',
-          label: '日照時間',
+          label: '立上り回数',
           backgroundColor: 'rgb(33, 33, 33)',
           borderColor: 'rgb(33, 33, 33)',
           fill: false,
           yAxisID: 'yaxis2',
           tension: 0,
           data: [
-            1664,
-            1663,
-            1696
+            100,
+            140,
+            150
           ]
         },
         {
@@ -286,30 +286,6 @@ new Chart(
             1470,
             1440,
             1410
-          ]
-        },
-        {
-          type: 'bar',
-          label: '西洋なし',
-          stack: 'なし',
-          backgroundColor: 'rgb(154, 219, 79)',
-          yAxisID: 'yaxis1',
-          data: [
-            14700,
-            12600,
-            15200
-          ]
-        },
-        {
-          type: 'bar',
-          label: 'かき',
-          stack: 'かき',
-          backgroundColor: 'rgb(219, 144, 79)',
-          yAxisID: 'yaxis1',
-          data: [
-            7640,
-            7210,
-            6050
           ]
         },
       ]
@@ -329,7 +305,7 @@ new Chart(
             position: 'left',
             scaleLabel: {
               display: true,
-              labelString: '生産量(t)',
+              labelString: '累計座位時間(日)',
             },
             stacked: true 
           },
@@ -338,11 +314,11 @@ new Chart(
             position: 'right',
             scaleLabel: {
               display: true,
-              labelString: '日照時間(h)',
+              labelString: '立上り回数(日)',
             },
             ticks: {
-              max: 1700,
-              min: 1600,
+              max: 300,
+              min: 0,
             },
             gridLines: {
               drawOnChartArea: false, 
