@@ -63,7 +63,6 @@
       var strMonth=dateToStrPad0Month(today.getMonth()+1);
       var strDay=dateToStrPad0Day(today.getDate());
       var strDataW = '0';
-      alert(strYear + strMonth+strDay);
       
       function dateToStrPad0Day(date) {
         var format = "DD";
@@ -77,6 +76,9 @@
         return format;
       }
       //' + strYear + strMonth + strDay + '
+
+      alert(strYear + strMonth+strDay);
+
       firebase.database().ref('/' + strYear + strMonth+strDay + '/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
 
