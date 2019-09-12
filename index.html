@@ -292,6 +292,7 @@ for(var i = 0;i < 7;i++) {
 	var strDay=dateToStrPad0Day(before.getDate());
 	
 	
+      alert(strYear + strMonth+strDay);
       firebase.database().ref('/' + strYear + strMonth + strDay + '/').on('value',function(snapshot) {
 	weekStand.unshift(snapshot.child("Standtime").val());
       
