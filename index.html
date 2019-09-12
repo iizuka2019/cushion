@@ -277,18 +277,20 @@ $('#twitter_button').click(function() {
     var canvas = document.getElementById('myChart');
     var ctx = canvas.getContext('2d');
     
+var date = new Date();
+var before = new Date();
+var week = [];
+for(var i = 0;i < 25;i++) {
+	before.setDate(date.getDate() - i);
+	week.unshift(before.getDate());
+}
+    
 new Chart(
   ctx, 
   {
     type: 'bar',
     data: {
-      labels: [
-        '2019/09/04',
-        '2019/09/05',
-        '2019/09/06',
-        '2019/09/09',
-        '2019/09/10',
-        '2019/09/11',
+      labels: [week
       ],
       datasets: [
         {
