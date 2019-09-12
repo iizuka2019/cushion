@@ -280,12 +280,47 @@ $('#twitter_button').click(function() {
 var date = new Date();
 var before = new Date();
 var week = [];
+var weekStand = [];
+	  
+	  
 for(var i = 0;i < 7;i++) {
 	before.setDate(date.getDate() - i);
 	week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
+	
+	var strYear=before.getFullYear();
+	var strMonth=dateToStrPad0Month(before.getMonth() + 1 );
+	var strDay=dateToStrPad0Day(before.getDate());
+	
+	
+      firebase.database().ref('/' + strYear + strMonth+strDay + '/').on('value',function(snapshot) {
+	weekStand.unshift(snapshot.child("Standtime").val());
+	      
+      });
+	
+	
+	
+	
+	
+	
 }
-    
-new Chart(
+
+	  
+      
+	function dateToStrPad0Day(date) {
+		var format = "DD";
+		format = format.replace(/DD/g, ('0' + date).slice(-2));
+		return format;
+	}
+
+	function dateToStrPad0Month(date) {
+		var format = "MM";
+		format = format.replace(/MM/g, ('0' + date).slice(-2));
+		return format;
+	}
+          
+	  
+	  
+	  new Chart(
   ctx, 
   {
     type: 'bar',
@@ -300,14 +335,7 @@ new Chart(
           fill: false,
           yAxisID: 'yaxis2',
           tension: 0,
-          data: [
-            111,
-            150,
-            110,
-            100,
-            140,
-            94
-          ]
+          data: weekStand
         },
         {
           type: 'bar',
