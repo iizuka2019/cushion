@@ -77,7 +77,7 @@
       }
       //' + strYear + strMonth + strDay + '
 
-      alert(strYear + strMonth+strDay);
+      //alert(strYear + strMonth+strDay);
 
       firebase.database().ref('/' + strYear + strMonth+strDay + '/').on('value',function(snapshot) {
         document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
@@ -163,8 +163,21 @@
           today.setDate(today.getDate() - 1);          
           
           var strYear=today.getFullYear();
-          var strMonth=today.getMonth()+1;
-          var strDay=today.getDate();
+          
+          var strMonth=dateToStrPad0Month(today.getMonth()+1);
+          var strDay=dateToStrPad0Day(today.getDate());
+      
+      function dateToStrPad0Day(date) {
+        var format = "DD";
+        format = format.replace(/DD/g, ('0' + date).slice(-2));
+        return format;
+      }
+      
+      function dateToStrPad0Month(date) {
+        var format = "MM";
+        format = format.replace(/MM/g, ('0' + date).slice(-2));
+        return format;
+      }
           
           document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
         }
