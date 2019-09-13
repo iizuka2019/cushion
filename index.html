@@ -292,7 +292,7 @@ for(var i = 0;i < 7;i++) {
 	var strDay=dateToStrPad0Day(before.getDate());
 	
 	
-      alert(strYear + strMonth+strDay);
+      //alert(strYear + strMonth+strDay);
 	var strValue=0
       firebase.database().ref('/' + strYear + strMonth + strDay + '/').on('value',function(snapshot) {
       strValue=snapshot.child("Standtime").val();
