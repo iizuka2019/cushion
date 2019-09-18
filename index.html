@@ -26,25 +26,12 @@
     <!-- width: 1%;-->
 		
     <style type="text/css">
-	table#title {
-		font-size: 14pt;
-		margin: 0pt;
-		text-align: center;
-		padding-top: 18pt;
-		background-color: #FFFFFF;
-		color: #696969;
-		font-family: "M PLUS Rounded 1c";
-	}
-	    
-	th#title{
-	  width: 50%;
-	  text-align: right;
-
-	}
-
-	td#title{
-	  width: 50%;
-	}
+.gnav__menu{
+    display: flex;
+}
+.gnav__menu__item{
+    margin-left: 20px;
+}
 	    
 
       p.wf-roundedmplus1c {font-family: "M PLUS Rounded 1c";}
@@ -215,16 +202,13 @@
 
 	
 <p class="wf-roundedmplus1c">
-
- 
-  <table class="title">
-    <tr>
-      <td width="5%" class="title"><a href="mypage.html"><i class="fa fa-user-o fa-lg"></i></a></td>
-      <td width="90%" class="title">CiliCill -シリシル-</td>
-      <td width="5%" class="title"><a href="graph.html"><i class="fa fa-bar-chart fa-lg"></i></a></td>
-    </tr>
-  </table>
-
+	<nav class="gnav">
+		 <ul class="gnav__menu">
+			<li class="gnav__menu__item"><a href="mypage.html"><i class="fa fa-user-o fa-lg"></i></a></li>
+			<li class="gnav__menu__item">CiliCill -シリシル-</li>
+			<li class="gnav__menu__item"><a href="graph.html"><i class="fa fa-bar-chart fa-lg"></i></a></li>
+		</ul>
+	</nav>
 </p>
 	  
 <hr>
