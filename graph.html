@@ -19,7 +19,23 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>週間情報</title>
     <style type="text/css">
-      p.wf-roundedmplus1c { font-family: "M PLUS Rounded 1c";}
+.gnav__menu{
+	display: flex;
+        font-family: "M PLUS Rounded 1c"
+}
+.gnav__menu__leftitem{
+	width: 5%;
+	list-style: none;
+}
+.gnav__menu__centeritem{
+	width: 80%;
+	list-style: none;
+}
+.gnav__menu__rightitem{
+	width: 10%;
+	list-style: none;
+}
+    p.wf-roundedmplus1c { font-family: "M PLUS Rounded 1c";}
       p.wf-roundedmplus1c_title {
         font-family: "M PLUS Rounded 1c"
         line-height : normal ;
@@ -157,11 +173,16 @@ document.getElementById("TargetDate-text").innerHTML =strYear + strMonth + strDa
   
     
     <!-- Title -->
-  
 <p class="wf-roundedmplus1c">
-  <a href="mypage.html">
-    <i class="fa fa-info-circle fa-lg"></i></a>  CiliCill -シリシル-</p>
-<hr>
+	<nav class="gnav">
+		 <ul class="gnav__menu">
+			<li class="gnav__menu__leftitem"><a href="mypage.html"><i class="fa fa-user-o fa-lg"></i></a></li>
+			<li class="gnav__menu__centeritem">CiliCill -シリシル-</li>
+			<li class="gnav__menu__rightitem"><a href="index.html"><i class="fa fa-bar-chart fa-lg"></i></a></li>
+		</ul>
+	</nav>
+</p>
+	
 
 <p class="wf-roundedmplus1c">
   <table class="device-info-table">
