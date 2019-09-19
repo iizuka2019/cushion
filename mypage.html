@@ -42,13 +42,13 @@
       }
 
 .table_data_th{
-  width: 50%;
+  width: 30%;
   text-align: center;
 
 }
 
 .table_data_td{
-  width: 50%;
+  width: 70%;
 }
 	    
       p.wf-roundedmplus1c {font-family: "M PLUS Rounded 1c";}
@@ -208,7 +208,7 @@
       <table class="device-info-table">
         <tr>
 	<th class="table_data_th">性別：</th>
-          <td>
+          <td class="table_data_td">
 		  <form id="gender">
 			<input type="radio" name="genders" class="liffRadio" value="male" onchange="changeData()">男性
 			<input type="radio" name="genders" class="liffRadio" value="female" onchange="changeData()">女性
@@ -217,13 +217,13 @@
         </tr>
         <tr>
           <th class="table_data_th">年齢：</th>
-		<td >
+          <td class="table_data_td">
 			<input type="tel" class="liffinput" name="age" maxlength="3" id="age-text" onchange="changeData()"> 才
 		</td>
         </tr>
         <tr>
           <th class="table_data_th">悩み：</th>
-		  <td>
+          <td class="table_data_td">
 			<input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">頭痛
 			<input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">首こり
 			<input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">肩こり
@@ -237,7 +237,8 @@
 	      
         <tr>
           <th class="table_data_th">体重：</th>
-          <td><input type="tel" class="liffinput"  name="weight" maxlength="3" id="weight-text" onchange="changeData()"> kg
+          <td class="table_data_td">
+		  <input type="tel" class="liffinput"  name="weight" maxlength="3" id="weight-text" onchange="changeData()"> kg
           </td>
         </tr>
       </table>
