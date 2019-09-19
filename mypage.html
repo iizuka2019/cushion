@@ -175,7 +175,11 @@
 </p>
 	  
 <hr>  
-  
+
+	  
+	  
+<p class="wf-roundedmplus1c">
+	  
   <table class="device-info-table">
     <tr>
       <td colspan="2" align="center"><span id="status"  ></span></td>
@@ -183,31 +187,14 @@
   </table>
       <input type="HIDDEN" name="TargetDate" id="TargetDate-text" >
     <hr />
+</p>
 
   
   
       <table class="device-info-table">
         <tr>
-          <th>体重：</th>
-          <td><input type="tel" class="liffinput"  name="weight" maxlength="3" id="weight-text" onchange="changeData()"> kg
-          </td>
-        </tr>
-      </table>
-
-  <table class="device-info-table">
-        <tr>
-          <th>年齢：</th>
-          <td><input type="tel" class="liffinput" name="age" maxlength="3" id="age-text" onchange="changeData()"> 才
-    
-          </td>
-        </tr>
-      </table>
-        
-      <table class="device-info-table">
-        <tr>
-          <th>性別：</th>
+	<th>性別：</th>
           <td>
-            
           <form id="gender">
                 <input type="radio" name="genders" class="liffRadio" value="male" onchange="changeData()">男性
                 <input type="radio" name="genders" class="liffRadio" value="female" onchange="changeData()">女性
@@ -215,8 +202,30 @@
 
           </td>
         </tr>
+        <tr>
+          <th>年齢：</th>
+          <td><input type="tel" class="liffinput" name="age" maxlength="3" id="age-text" onchange="changeData()"> 才
+    
+          </td>
+        </tr>
+        <tr>
+          <th>悩み：</th>
+          <td><input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">頭痛</td>
+          <td><input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">首こり</td>
+          <td><input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">肩こり</td>
+          <td><input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">腰痛</td>
+          <td><input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">ひざ痛</td>
+          <td><input type="radio" name="worry" class="liffRadio" value="male" onchange="changeData()">その他</td>
+        </tr>
+	      
+        <tr>
+          <th>体重：</th>
+          <td><input type="tel" class="liffinput"  name="weight" maxlength="3" id="weight-text" onchange="changeData()"> kg
+          </td>
+        </tr>
       </table>
     
+</p>
 
     </section>
     
