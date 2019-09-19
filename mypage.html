@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="cushion.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/jquery.circliful.css">
     <link rel="stylesheet" href="css/font-icon.css">
     
@@ -18,6 +18,32 @@
     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <title>MyPage</title>
+
+    <style type="text/css">
+      .gnav__menu{
+        display: flex;
+              font-family: "M PLUS Rounded 1c"
+      }
+      .gnav__menu__leftitem{
+        width: 5%;
+        list-style: none;
+      }
+      .gnav__menu__centeritem{
+        width: 80%;
+        list-style: none;
+      }
+      .gnav__menu__rightitem{
+        width: 10%;
+        list-style: none;
+      }
+      p.wf-roundedmplus1c {font-family: "M PLUS Rounded 1c";}
+      p.wf-roundedmplus1c_title {
+        font-family: "M PLUS Rounded 1c"
+        line-height : normal ;
+        border-bottom : 1px solid gray ;
+      }
+	</style>
+    
    </head>
 
   <body>
@@ -133,9 +159,19 @@
     
     <!-- Title -->
   
+
+<p class="wf-roundedmplus1c">
+	<nav class="gnav">
+		 <ul class="gnav__menu">
+			<li class="gnav__menu__leftitem"><a href="index.html"><i class="fa fa-home fa-lg"></i></a></li>
+			<li class="gnav__menu__centeritem">CiliCill -シリシル-</li>
+			<li class="gnav__menu__rightitem"><a href="graph.html"><i class="fa fa-bar-chart fa-lg"></i></a></li>
+		</ul>
+	</nav>
+</p>
+	  
+<hr>  
   
-    <h2><a href="index.html"><i class="fa fa-info-circle fa-2x"></i></a>MyPage</h2>
-    <hr />
   <table class="device-info-table">
     <tr>
       <td colspan="2" align="center"><span id="status"  ></span></td>
