@@ -25,8 +25,8 @@
 
     <style type="text/css">
       .gnav__menu{
-        display: flex;
-              font-family: "M PLUS Rounded 1c"
+	display: flex;
+	font-family: "M PLUS Rounded 1c"
       }
       .gnav__menu__leftitem{
         width: 5%;
@@ -40,6 +40,17 @@
         width: 10%;
         list-style: none;
       }
+
+.table_data_th{
+  width: 50%;
+  text-align: Left;
+
+}
+
+.table_data_td{
+  width: 50%;
+}
+	    
       p.wf-roundedmplus1c {font-family: "M PLUS Rounded 1c";}
       p.wf-roundedmplus1c_title {
         font-family: "M PLUS Rounded 1c"
@@ -196,7 +207,10 @@
 <p class="wf-roundedmplus1c">  
       <table class="device-info-table">
         <tr>
-	<th align="left">性別：</th>
+		<p class="table_data_th">
+			<th align="left">性別：</th>
+		</p>
+		
           <td>
 		  <form id="gender">
 			<input type="radio" name="genders" class="liffRadio" value="male" onchange="changeData()">男性
