@@ -239,8 +239,8 @@ for(var i = 0;i < 7;i++) {
 	
 	
       //alert(strYear + strMonth+strDay);
- strValue =　firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
-	  return snapshot.child("Standtime").val();
+	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
+		document.getElementById("GraphLabel-text").textContent =snapshot.child("Standtime").val();
 	});
 	alert(strValue);
 	weekStand.unshift(strValue);
