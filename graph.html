@@ -122,9 +122,9 @@
     
     
   <script>
-    //var ctx = document.getElementById("canvas").getContext("2d")
-    var canvas = document.getElementById('myChart');
-    var ctx = canvas.getContext('2d');
+
+var canvas = document.getElementById('myChart');
+var ctx = canvas.getContext('2d');
     
 var date = new Date();
 var before = new Date();
@@ -132,6 +132,11 @@ var week = [];
 var weekStand = [];
 var strValue=0;
 	  
+	  
+	  
+
+async function f1(){
+
 for(var i = 0;i < 7;i++) {
 	before.setDate(date.getDate() - i);
 	week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
@@ -152,7 +157,6 @@ for(var i = 0;i < 7;i++) {
 		
 		
 		weekStand.unshift(document.getElementById("statusMan").innerHTML);
-		Chart.set({weekStand:weekStand});
 		
 	});
 	//alert(document.getElementById("GraphLabel-text").textContent);
@@ -162,21 +166,17 @@ for(var i = 0;i < 7;i++) {
 	
 }
 
-
- 	  
-      
-	function dateToStrPad0Day(date) {
-		var format = "DD";
-		format = format.replace(/DD/g, ('0' + date).slice(-2));
-		return format;
-	}
-
-	function dateToStrPad0Month(date) {
-		var format = "MM";
-		format = format.replace(/MM/g, ('0' + date).slice(-2));
-		return format;
-	}
-          
+	
+	
+	
+	
+	
+	console.log("#1: f1");
+        return "f1 ==> f2";
+}
+async function f2(passVal){
+	
+ 
 	  
 	  
 	  new Chart(
@@ -256,7 +256,87 @@ for(var i = 0;i < 7;i++) {
       }
     },
   }
-)
+)	
+	
+    console.log("#2: f2");
+    return Timeout("f2 ==> f3", Math.random()*2000);
+}
+
+async function f3(passVal){
+    console.log("#3: f3");
+    return Timeout("f3 ==> f4", Math.random()*3000);
+}
+
+async function f4(passVal){
+        console.log("#4: f4");
+        return Timeout("f4", Math.random()*3000);
+
+}
+	  
+async function runAll(){
+    try{
+        console.log("[START]");
+        const res1 = await f1();
+        console.log(res1);
+
+        const res2 = await f2(res1);
+        console.log(res2);
+
+        const res3 = await f3(res2);
+        console.log(res3);
+
+        const res4 = await f4(res3);
+        console.log("Final function: " + res4);
+
+        console.log("[END]");
+
+    }catch(err){
+        //エラー処理
+        //とりあえず何もしない
+    }
+}
+
+runAll();	  
+	  
+	  
+	  
+
+      
+	function dateToStrPad0Day(date) {
+		var format = "DD";
+		format = format.replace(/DD/g, ('0' + date).slice(-2));
+		return format;
+	}
+
+	function dateToStrPad0Month(date) {
+		var format = "MM";
+		format = format.replace(/MM/g, ('0' + date).slice(-2));
+		return format;
+	}
+          	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+
+ 	 
   </script>
   </body>
 
