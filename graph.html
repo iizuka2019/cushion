@@ -240,11 +240,8 @@ for(var i = 0;i < 7;i++) {
 	
       //alert(strYear + strMonth+strDay);
  strValue =　firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
-		//strValue=snapshot.child("Standtime").val();
-		//document.getElementById("GraphLabel-text").innerHTML =snapshot.child("Standtime").val();
-		
-	}
-									      );
+	  console.log(snapshot.val());
+	});
 	alert(strValue);
 	weekStand.unshift(strValue);
 	
