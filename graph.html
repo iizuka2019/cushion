@@ -239,12 +239,12 @@ for(var i = 0;i < 7;i++) {
 	
       //alert(strYear + strMonth+strDay);
 	var strValue=0
-      firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
-      strValue=snapshot.child("Standtime").val();
+	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
+	strValue=snapshot.child("Standtime").val();
 	alert(strValue);
+	weekStand.unshift(strValue);
 	      
       });
-	weekStand.unshift(strValue);
 	
 	
 	
