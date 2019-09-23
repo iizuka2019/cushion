@@ -143,6 +143,7 @@ for(var i = 0;i < 7;i++) {
 	
       //alert(strYear + strMonth+strDay);
 	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
+		alert(snapshot.child("Standtime").val());
 		document.getElementById("GraphLabel-text").textContent =snapshot.child("Standtime").val();
 	});
 	alert(document.getElementById("GraphLabel-text").textContent);
