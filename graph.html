@@ -147,7 +147,7 @@ for(var i = 0;i < 7;i++) {
 	var strDayG=dateToStrPad0Day(before.getDate());
 	
 
-	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
+	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').once('value',function(snapshot) {
 		document.getElementById("statusMan").innerHTML =snapshot.child("Standtime").val();
 		alert("firebase" + document.getElementById("statusMan").innerHTML);
 		weekStand.unshift(document.getElementById("statusMan").innerHTML);
