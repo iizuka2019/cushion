@@ -69,107 +69,10 @@
         firebase.initializeApp(config);
     </script>
     
-    <script>
-    //読み込み処理
-      var today = new Date();
-      var strYear=today.getFullYear();
-      var strMonth=dateToStrPad0Month(today.getMonth()+1);
-      var strDay=dateToStrPad0Day(today.getDate());
-      var strDataW = '0';
-      
-      function dateToStrPad0Day(date) {
-        var format = "DD";
-        format = format.replace(/DD/g, ('0' + date).slice(-2));
-        return format;
-      }
-      
-      function dateToStrPad0Month(date) {
-        var format = "MM";
-        format = format.replace(/MM/g, ('0' + date).slice(-2));
-        return format;
-      }
-      //' + strYear + strMonth + strDay + '
-
-      //alert(strYear + strMonth+strDay);
-
-      firebase.database().ref('/' + strYear + strMonth+strDay + '/').on('value',function(snapshot) {
-        document.getElementById("Sittingtime").innerHTML = snapshot.child("Sittingtime").val();
-
-
-        strDataW=snapshot.child("stsum").val();
-        var strdataH =0;
-        strDataW =  Math.round((Number(strDataW)/60/60) * 10)/10;
-        strdataH =  strDataW;
-        strDataW =  (Number(strDataW)/8*100);
-        
-        document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
-        document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
-
-document.getElementById("TargetDate-text").innerHTML =strYear + strMonth + strDay
-      });
-
-    </script>
     
 <section class="container">
 
 
-    <script>
-    //書き込み処理
-     // var today = new Date();
-     // var strYear=today.getFullYear();
-     // var strMonth=today.getMonth()+1;
-     // var strDate=today.getDate();
-            
-      var db = firebase.database();
-      
-      var myChatAll = db.ref("/myinfo/");
-      function changeData(){
-        var txtAge = document.getElementById("age-text").value;
-        var txtWeight = document.getElementById("weight-text").value;
-        
-        var element = document.getElementById("gender") ;
-        var elements = element.genders ;
-        var strGender =  "";
-
-        if (elements[0].checked == true){
-          strGender = 'male' ;
-        }else{
-          strGender = 'female' ;
-        }
-        //myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight,weight:"0.1",Sittingtime:"16" ,Standtime:"41"});
-        myChatAll.set({age:txtAge, genders:strGender,myweight:txtWeight});
-      }
-      
-    </script>
-  
-  
-    <script>
-      function handlerToggleLed(strLR) {
-        if(strLR == "left"){
-          var today = document.getElementById("TargetDate-text").innerHTML;
-          today.setDate(today.getDate() - 1);          
-          
-          var strYear=today.getFullYear();
-          
-          var strMonth=dateToStrPad0Month(today.getMonth()+1);
-          var strDay=dateToStrPad0Day(today.getDate());
-      
-      function dateToStrPad0Day(date) {
-        var format = "DD";
-        format = format.replace(/DD/g, ('0' + date).slice(-2));
-        return format;
-      }
-      
-      function dateToStrPad0Month(date) {
-        var format = "MM";
-        format = format.replace(/MM/g, ('0' + date).slice(-2));
-        return format;
-      }
-          
-          document.getElementById("status").innerHTML =strYear + '年' + strMonth + '月' + strDay + '日'
-        }
-      }
-    </script>
   
     
     <!-- Title -->
@@ -242,8 +145,8 @@ for(var i = 0;i < 7;i++) {
 	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
 		document.getElementById("GraphLabel-text").textContent =snapshot.child("Standtime").val();
 	});
-	alert(document.getElementById("GraphLabel-text").textContent);
-	weekStand.unshift(document.getElementById("GraphLabel-text").textContent);
+	alert(snapshot.child("Standtime").val());
+	weekStand.unshift(snapshot.child("Standtime").val());
 	
 	
 	
