@@ -136,7 +136,9 @@ var strValue=0;
 	  
 	  
 	  
-	  
+document.addEventListener('DOMContentLoaded', function() {
+    // 処理を書く
+
 	  
 let promise = new Promise((resolve, reject) => { // #1
 
@@ -157,21 +159,6 @@ for(var i = 0;i < 7;i++) {
 		
 	});	
  
-	
-	
-	
- 
-		
-	
-	  	
-      //alert(strYear + strMonth+strDay);
-	
-	
-	//alert(document.getElementById("GraphLabel-text").textContent);
-		//alert("html" + document.getElementById("statusMan").innerHTML);
-	//weekStand.unshift(document.getElementById("statusMan").innerHTML);
-	
-	
 }
 
 	
@@ -194,7 +181,7 @@ promise.then((msg) => { // #2
   console.log('#3')
 	
 
-	  new Chart(
+new Chart(
   ctx, 
   {
     type: 'bar',
@@ -283,7 +270,7 @@ promise.then((msg) => { // #2
 	  
 	  
 	  
-	  
+});
 	  
 	  
 	  
