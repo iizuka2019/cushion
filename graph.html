@@ -145,8 +145,8 @@ for(var i = 0;i < 7;i++) {
 	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
 		document.getElementById("GraphLabel-text").textContent =snapshot.child("Standtime").val();
 	});
-	alert(snapshot.child("Standtime").val());
-	weekStand.unshift(snapshot.child("Standtime").val());
+	alert(document.getElementById("GraphLabel-text").textContent);
+	weekStand.unshift(document.getElementById("GraphLabel-text").textContent);
 	
 	
 	
