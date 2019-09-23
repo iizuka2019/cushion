@@ -176,7 +176,7 @@ promise.then((msg) => { // #2
 }).then((msg) => { // #3
   console.log('#3')
 	
-
+setTimeout(() => {
 new Chart(
   ctx, 
   {
@@ -255,6 +255,11 @@ new Chart(
     },
   }
 )	
+
+}, 3000)
+	
+	
+
 	
   return msg + 'Jeccy.'
 }).then((msg) => { // #4
