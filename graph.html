@@ -241,8 +241,9 @@ for(var i = 0;i < 7;i++) {
 	var strValue=0
       firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
       strValue=snapshot.child("Standtime").val();
+	alert(strValue);
+	      
       });
-	alert(strYearG + strMonthG + strDayG);
 	weekStand.unshift(strValue);
 	
 	
