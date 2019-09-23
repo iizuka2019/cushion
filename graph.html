@@ -187,10 +187,10 @@ document.getElementById("TargetDate-text").innerHTML =strYear + strMonth + strDa
 <p class="wf-roundedmplus1c">
   <table class="device-info-table">
     <tr>
-      <td colspan="2" align="center"><span id="status"  ></span></td>
+      <td colspan="2" align="center"><span id="status"></span></td>
     </tr>
     <tr>
-      <td colspan="2" align="center"><span id="statusMan"  ></span></td>
+      <td colspan="2" align="center"><span id="statusMan"></span></td>
     </tr>
   </table>
 </p>
@@ -203,16 +203,16 @@ document.getElementById("TargetDate-text").innerHTML =strYear + strMonth + strDa
   
 
 <p class="wf-roundedmplus1c">  
-  <table class="device-info-table">
-    <tr>
-          <td colspan="2" align="center">
-  <div style="width: 100%; height: 400">
-    <canvas id="myChart" style="width: 100%; height: 100%;"/>
-  </div>
-          </td>
-        </tr>
-        </table>
-  </p>
+	<table class="device-info-table">
+		<tr>
+			<td colspan="2" align="center">
+				<div style="width: 100%; height: 400">
+				<canvas id="myChart" style="width: 100%; height: 100%;"/>
+				</div>
+			</td>
+		</tr>
+	</table>
+</p>
 
   
 </section>
@@ -239,13 +239,14 @@ for(var i = 0;i < 7;i++) {
 	
 	
       //alert(strYear + strMonth+strDay);
-	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
+ strValue =　firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
 		//strValue=snapshot.child("Standtime").val();
-		document.getElementById("GraphLabel-text").innerHTML =snapshot.child("Standtime").val();
-	});
-	alert(document.getElementById("GraphLabel-text").innerHTML);
-	weekStand.unshift(document.getElementById("GraphLabel-text").innerHTML);
-	
+		//document.getElementById("GraphLabel-text").innerHTML =snapshot.child("Standtime").val();
+		
+	}
+									      );
+	alert(strValue);
+	weekStand.unshift(strValue);
 	
 	
 	
