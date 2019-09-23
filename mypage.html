@@ -69,6 +69,16 @@
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     
     <script>
+$(function(){
+	var aTags = $('a'); //ページ内のaタグ群を取得。aTagsに配列として代入。
+	aTags.each(function(){ //全てのaタグについて処理
+		var url = $(this).attr('href');//aタグのhref属性からリンク先url取得
+		$(this).removeAttr('href');//念のため、href属性は削除
+		$(this).click(function(){//クリックイベントをバインド
+			location.href = url;
+		});
+	});
+});	    
         // Initialize Firebase
         var config = {
             apiKey: "AIzaSyAmSempEJ9w0lu8yYkFbdmpgI8nnlOC_YU",
