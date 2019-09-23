@@ -241,7 +241,6 @@ for(var i = 0;i < 7;i++) {
 	var strValue=0
 	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
 	strValue=snapshot.child("Standtime").val();
-	alert(strValue);
 	weekStand.unshift(strValue);
 	      
       });
@@ -284,15 +283,7 @@ for(var i = 0;i < 7;i++) {
           fill: false,
           yAxisID: 'yaxis2',
           tension: 0,
-          data: [
-            110,
-            122,
-            125,
-            140,
-            90,
-            120,
-            7
-          ]
+	  data:weekStand
         },
         {
           type: 'bar',
