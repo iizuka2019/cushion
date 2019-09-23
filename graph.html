@@ -196,6 +196,7 @@ document.getElementById("TargetDate-text").innerHTML =strYear + strMonth + strDa
 </p>
     
       <input type="HIDDEN" name="TargetDate" id="TargetDate-text" >
+      <input type="HIDDEN" name="GraphLabel" id="GraphLabel-text" >
 
       <!-- Device Info Table -->
 <hr>
@@ -239,10 +240,11 @@ for(var i = 0;i < 7;i++) {
 	
       //alert(strYear + strMonth+strDay);
 	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
-		strValue=snapshot.child("Standtime").val();
+		//strValue=snapshot.child("Standtime").val();
+		document.getElementById("GraphLabel-text").innerHTML =snapshot.child("Standtime").val();
 	});
-	alert(strValue);
-	weekStand.unshift(strValue);
+	alert(document.getElementById("GraphLabel-text").innerHTML);
+	weekStand.unshift(document.getElementById("GraphLabel-text").innerHTML);
 	
 	
 	
