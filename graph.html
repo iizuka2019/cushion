@@ -48,7 +48,19 @@
    </head>
 
   <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+ $(function(){
+ var aTags = $('a'); //ページ内のaタグ群を取得。aTagsに配列として代入。
+ aTags.each(function(){ //全てのaタグについて処理
+ var url = $(this).attr('href');//aタグのhref属性からリンク先url取得
+　　　$(this).removeAttr('href');//念のため、href属性は削除
+ $(this).click(function(){//クリックイベントをバインド
+ location.href = url;
+ });
+ });
+ });
+</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/jquery.circliful.js"></script>
     
