@@ -145,12 +145,21 @@ for(var i = 0;i < 7;i++) {
 	var strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
 	var strDayG=dateToStrPad0Day(before.getDate());
 	
-	
+
+	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',async function(snapshot) {
+		document.getElementById("statusMan").innerHTML =snapshot.child("Standtime").val();
+		alert("firebase" + document.getElementById("statusMan").innerHTML);
+		
+		weekStand.unshift(document.getElementById("statusMan").innerHTML);
+		
+	});	
+ 
+	  	
       //alert(strYear + strMonth+strDay);
 	
 	
 	//alert(document.getElementById("GraphLabel-text").textContent);
-		alert("html" + document.getElementById("statusMan").innerHTML);
+		//alert("html" + document.getElementById("statusMan").innerHTML);
 	//weekStand.unshift(document.getElementById("statusMan").innerHTML);
 	
 	
@@ -166,18 +175,6 @@ for(var i = 0;i < 7;i++) {
 }
 async function f2(passVal){
 
-	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').once('value',function(snapshot) {
-		document.getElementById("statusMan").innerHTML =snapshot.child("Standtime").val();
-		alert("firebase" + document.getElementById("statusMan").innerHTML);
-		
-		
-		
-		
-		weekStand.unshift(document.getElementById("statusMan").innerHTML);
-		
-	});	
- 
-	  
 	 
     console.log("#2: f2");
     return Timeout("f2 ==> f3", Math.random()*2000);
