@@ -144,10 +144,11 @@ for(var i = 0;i < 7;i++) {
       //alert(strYear + strMonth+strDay);
 	firebase.database().ref('/' + strYearG + strMonthG + strDayG + '/').on('value',function(snapshot) {
 		document.getElementById("statusMan").innerHTML =snapshot.child("Standtime").val();
+		alert("firebase" + document.getElementById("statusMan").innerHTML);
 		//weekStand.unshift(snapshot.child("Standtime").val());
 	});
 	//alert(document.getElementById("GraphLabel-text").textContent);
-		alert(document.getElementById("statusMan").innerHTML);
+		alert("html" + document.getElementById("statusMan").innerHTML);
 	weekStand.unshift(document.getElementById("statusMan").innerHTML);
 	
 	
