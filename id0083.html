@@ -129,9 +129,9 @@ $(function(){
         var strdataH =0;
         strDataW =  Math.round((Number(strDataW)/60/60) * 10)/10;
         strdataH =  strDataW;
-        strDataW =  (Number(strDataW)/8*100);
+        strDataW =  (Number(strDataW)/24*100);
         
-        document.getElementById("st-sum").innerHTML = strdataH + "時間／8時間"
+        document.getElementById("st-sum").innerHTML = strdataH + "時間／24時間"
         
         
         document.getElementById("Standtime").innerHTML = snapshot.child("Standtime").val();  
