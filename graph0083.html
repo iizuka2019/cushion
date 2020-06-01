@@ -153,17 +153,11 @@ let promise = new Promise((resolve, reject) => { // #1
 
 for(var i = 0;i < 7;i++) {
 	
-	alert(date.getDate())
 	
-
-if(before.getDate()<7){
 	before.setDate(date.getDate() - i);
 	week.unshift(before.getMonth()  + 1 + '月' + before.getDate() + '日');
-}else{
-	before.setDate(date.getDate() - i);
-	week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
-}
-	
+	date.setDate(date.getDate() - i);
+
 	
 	var strYearG=before.getFullYear();
 	var strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
