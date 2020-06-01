@@ -168,6 +168,11 @@ if(before.getDate()<7){
 	
 	var strYearG=before.getFullYear();
 	var strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
+	if(strMonthG==31){
+		strMonthG=dateToStrPad0Month(before.getMonth()  );
+	}else{
+		strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
+	}
 	var strDayG=dateToStrPad0Day(before.getDate());
 	
 	//alert(strYearG)
