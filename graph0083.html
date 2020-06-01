@@ -155,12 +155,13 @@ for(var i = 0;i < 7;i++) {
 	
 	//alert(date.getDate())
 	
-	before.setDate(date.getDate() - i);
 
 if(before.getDate()<7){
+	before.setDate(date.getDate() - i);
 	week.unshift(before.getMonth()  + 1 + '月' + before.getDate() + '日');
 }else{
-	week.unshift(before.getMonth() + '月' + before.getDate() + '日');
+	before.setDate(date.getDate() - i);
+	week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
 }
 	
 	//week.unshift(before.getMonth()  + '月' + before.getDate() + '日');
