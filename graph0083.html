@@ -152,6 +152,9 @@ var strValue=0;
 let promise = new Promise((resolve, reject) => { // #1
 
 for(var i = 0;i < 7;i++) {
+	
+	alert(date.getDate())
+	alert(date.getDate() - i)
 	before.setDate(date.getDate() - i);
 	week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
 	//week.unshift(before.getMonth()  + '月' + before.getDate() + '日');
