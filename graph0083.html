@@ -160,6 +160,8 @@ for(var i = 0;i < 7;i++) {
 	var strDayG=dateToStrPad0Day(before.getDate());
 	
 	alert(strYearG)
+	alert(strMonthG)
+	alert(strDayG)
 
 	firebase.database().ref('/id0083/' + strYearG + strMonthG + strDayG + '/').once('value',function(snapshot) {
 		weekStand.unshift(snapshot.child("Standtime").val());
