@@ -153,13 +153,13 @@ let promise = new Promise((resolve, reject) => { // #1
 
 for(var i = 0;i < 7;i++) {
 	before.setDate(date.getDate() - i);
-	//week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
-	week.unshift(before.getMonth()  + '月' + before.getDate() + '日');
-	
+	week.unshift(before.getMonth() + 1 + '月' + before.getDate() + '日');
+	//week.unshift(before.getMonth()  + '月' + before.getDate() + '日');
 	var strYearG=before.getFullYear();
 	var strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
 	var strDayG=dateToStrPad0Day(before.getDate());
 	
+	alert(strYearG)
 
 	firebase.database().ref('/id0083/' + strYearG + strMonthG + strDayG + '/').once('value',function(snapshot) {
 		weekStand.unshift(snapshot.child("Standtime").val());
