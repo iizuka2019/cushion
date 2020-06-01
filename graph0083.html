@@ -153,9 +153,6 @@ let promise = new Promise((resolve, reject) => { // #1
 
 for(var i = 0;i < 7;i++) {
 	
-	if(i==1){
-		date.setDate(new Date(date.getFullYear(), date.getMonth(), 0));
-	}
 	before.setDate(date.getDate() - i );
 	week.unshift(before.getMonth()  + 1 + '月' + before.getDate() + '日');
 	
