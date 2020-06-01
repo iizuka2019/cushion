@@ -171,7 +171,7 @@ if(before.getDate()<7){
 	var strDayG=dateToStrPad0Day(before.getDate());
 	
 	//alert(strYearG)
-	//alert(strMonthG)
+	alert(strMonthG + strDayG)
 	//alert(strDayG)
 
 	firebase.database().ref('/id0083/' + strYearG + strMonthG + strDayG + '/').once('value',function(snapshot) {
