@@ -168,13 +168,15 @@ if(before.getDate()<7){
 	
 	var strYearG=before.getFullYear();
 	var strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
-	if(strMonthG==31){
-		strMonthG=dateToStrPad0Month(before.getMonth()  );
-	}else{
-		strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
-	}
-	var strDayG=dateToStrPad0Day(before.getDate());
 	
+	var strDayG=dateToStrPad0Day(before.getDate());
+	if(strDayG==31){
+		 strMonthG=dateToStrPad0Month(before.getMonth()  );
+		strDayG=dateToStrPad0Day(before.getDate());
+	}else{
+		 strMonthG=dateToStrPad0Month(before.getMonth() + 1 );
+		strDayG=dateToStrPad0Day(before.getDate());
+	}
 	//alert(strYearG)
 	alert(strMonthG + strDayG)
 	//alert(strDayG)
